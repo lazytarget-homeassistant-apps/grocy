@@ -13,4 +13,10 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-ci.yaml@main
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+      packages: read
+      security-events: write
+    uses: lazytarget/ha-workflows/.github/workflows/addon-ci.yaml@main
