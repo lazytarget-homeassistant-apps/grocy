@@ -8,27 +8,6 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
-      "matchStringsStrategy": "any",
-      "matchStrings": [
-        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
-        "(aarch64|amd64):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
-      ],
-      "datasourceTemplate": "docker"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["/Dockerfile$"],
-      "matchStringsStrategy": "any",
-      "matchStrings": [
-        "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
-      ],
-      "versioningTemplate": "loose",
-      "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_19/{{package}}"
-    },
-    {
-      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG GROCY_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
@@ -39,30 +18,10 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["repology"],
-      "automerge": true
-    },
-    {
-      "groupName": "PHP",
-      "matchDatasources": ["repology"],
-      "automerge": true,
-      "matchDepNames": ["/alpine.*/php.*/"]
-    },
-    {
-      "groupName": "Add-on base image",
-      "matchDatasources": ["docker"]
-    },
-    {
-      "groupName": "Add-on base image",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
-    },
-    {
       "matchDatasources": ["github-releases"],
       "matchDepNames": ["grocy/grocy"],
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "automerge": false
     }
   ]
 }
