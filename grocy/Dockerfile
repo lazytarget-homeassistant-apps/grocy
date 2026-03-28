@@ -72,6 +72,10 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
+# Ensure s6-overlay scripts are executable
+RUN chmod a+x /etc/s6-overlay/s6-rc.d/*/run \
+    && chmod a+x /etc/s6-overlay/s6-rc.d/*/finish 2>/dev/null || true
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
