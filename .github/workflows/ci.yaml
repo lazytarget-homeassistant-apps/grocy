@@ -19,4 +19,4 @@ jobs:
       pull-requests: write
       packages: read
       security-events: write
-    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/addon-ci.yaml@main
+    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/addon-ci.yaml@edge

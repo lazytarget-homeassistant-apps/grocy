@@ -15,7 +15,7 @@ on:
 
 jobs:
   workflows:
-    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/addon-deploy.yaml@main
+    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/addon-deploy.yaml@edge
     permissions:
       contents: read
       packages: write
