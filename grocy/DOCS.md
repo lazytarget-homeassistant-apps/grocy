@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Grocy
+# LazyTarget's Home Assistant Community Add-on: Grocy
 
 [Grocy][grocy] - ERP beyond your fridge is a powerful groceries & household
 management solution for your home, delivering features like:
@@ -39,6 +39,7 @@ Example add-on configuration:
 culture: en
 currency: USD
 entry_page: stock
+grocycode_type: 2D
 features:
   batteries: true
   calendar: true
@@ -157,6 +158,17 @@ You can use the one of the following values:
 
 By default the homepage is set to the stock overview.
 
+### Option: `grocycode_type`
+
+Allows you to change the barcode type for GrocyCodes. Useful if your barcode scanner doesn't support the default.
+
+You can use the one of the following values:
+
+- `1D` (Code128)
+- `2D` (DataMatrix)
+
+Since v4.5.0 Grocy uses `2D` as the default.
+
 ### Option: `features`
 
 Is used for enable or disable features in Grocy. Disabled features
@@ -270,7 +282,7 @@ check [the contributor's page][contributors].
 
 MIT License
 
-Copyright (c) 2019-2024 Franck Nijhof
+Copyright (c) 2019-2025 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -291,7 +303,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_grocy&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
+[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_grocy&repository_url=https%3A%2F%2Fgithub.com%2Flazytarget-homeassistant-apps%2Frepository
 [alpine-packages]: https://pkgs.alpinelinux.org/packages
 [contributors]: https://github.com/hassio-addons/addon-grocy/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e

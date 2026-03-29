@@ -8,12 +8,16 @@ on:
       - published
   workflow_run:
     workflows: ["CI"]
-    branches: [main]
+    branches: [main, edge, dev]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
+    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/addon-deploy.yaml@edge
+    permissions:
+      contents: read
+      packages: write
     secrets:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}

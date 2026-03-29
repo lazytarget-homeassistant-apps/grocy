@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG GROCY_VERSION="v4.3.0"
+ARG GROCY_VERSION="v4.4.2"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
@@ -30,7 +30,7 @@ RUN \
         php82=8.2.26-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.43.5-r0 \
+        git=2.43.7-r0 \
         php82-openssl=8.2.26-r0 \
         php82-phar=8.2.26-r0 \
     \
@@ -72,6 +72,10 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
+# Ensure s6-overlay scripts are executable
+RUN find /etc/s6-overlay/s6-rc.d/ -name "run" -exec chmod a+x {} + \
+    && find /etc/s6-overlay/s6-rc.d/ -name "finish" -exec chmod a+x {} +
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
@@ -88,13 +92,13 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Franck Nijhof <frenck@addons.community>" \
+    maintainer="LazyTarget <peter@peteraslund.me>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
+    org.opencontainers.image.vendor="LazyTarget's Home Assistant Apps" \
+    org.opencontainers.image.authors="LazyTarget <peter@peteraslund.me>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.url="https://github.com/lazytarget-homeassistant-apps" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
