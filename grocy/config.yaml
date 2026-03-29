@@ -41,6 +41,9 @@ options:
     stock_product_freezing: true
     stock_product_opened_tracking: true
     stock_count_opened_products_against_minimum_stock_amount: true
+  printer:
+    label_printer: false
+    thermal_printer: false
   ssl: true
   certfile: fullchain.pem
   keyfile: privkey.pem
@@ -71,6 +74,17 @@ schema:
     stock_product_freezing: bool
     stock_product_opened_tracking: bool
     stock_count_opened_products_against_minimum_stock_amount: bool
+  printer:
+    label_printer: bool
+    label_printer_webhook: str?
+    label_printer_run_server: bool?
+    label_printer_params: str?
+    label_printer_hook_json: bool?
+    thermal_printer: bool
+    tprinter_print_quantity_name: bool?
+    tprinter_print_notes: bool?
+    tprinter_ip: str?
+    tprinter_port: int(1,65535)?
   ssl: bool
   certfile: str
   keyfile: str
