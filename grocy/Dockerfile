@@ -8,31 +8,31 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 ARG GROCY_VERSION="v4.6.0"
 # hadolint ignore=DL3003
-RUN \
+RUN \RUN \
     apk add --no-cache \
-        composer=2.7.7-r0 \
-        nginx=1.24.0-r16 \
-        patch=2.7.6-r10 \
-        php82-ctype=8.2.26-r0 \
-        php82-exif=8.2.26-r0 \
-        php82-fileinfo=8.2.26-r0 \
-        php82-fpm=8.2.26-r0 \
-        php82-gd=8.2.26-r0 \
-        php82-iconv=8.2.26-r0 \
-        php82-intl=8.2.26-r0 \
-        php82-ldap=8.2.26-r0 \
-        php82-mbstring=8.2.26-r0 \
-        php82-opcache=8.2.26-r0 \
-        php82-pdo_sqlite=8.2.26-r0 \
-        php82-pdo=8.2.26-r0 \
-        php82-simplexml=8.2.26-r0 \
-        php82-tokenizer=8.2.26-r0 \
-        php82=8.2.26-r0 \
+        composer \
+        nginx \
+        patch \
+        php82-ctype \
+        php82-exif \
+        php82-fileinfo \
+        php82-fpm \
+        php82-gd \
+        php82-iconv \
+        php82-intl \
+        php82-ldap \
+        php82-mbstring \
+        php82-opcache \
+        php82-pdo_sqlite \
+        php82-pdo \
+        php82-simplexml \
+        php82-tokenizer \
+        php82 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.43.7-r0 \
-        php82-openssl=8.2.26-r0 \
-        php82-phar=8.2.26-r0 \
+        git \
+        php82-openssl \
+        php82-phar \
     \
     && yarn global add modclean \
     \
