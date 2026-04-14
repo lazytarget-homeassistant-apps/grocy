@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/lock.yaml@v2.2
+    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/lock.yaml@v2.2.0
