@@ -12,27 +12,27 @@ RUN \
     apk add --no-cache \
         nginx \
         patch \
-        php85-ctype=8.5.4-r0 \
-        php85-exif=8.5.4-r0 \
-        php85-fileinfo=8.5.4-r0 \
-        php85-fpm=8.5.4-r0 \
-        php85-gd=8.5.4-r0 \
-        php85-iconv=8.5.4-r0 \
-        php85-intl=8.5.4-r0 \
-        php85-ldap=8.5.4-r0 \
-        php85-mbstring=8.5.4-r0 \
-        php85-pdo_sqlite=8.5.4-r0 \
-        php85-pdo=8.5.4-r0 \
-        php85-simplexml=8.5.4-r0 \
-        php85-tokenizer=8.5.4-r0 \
-        php85=8.5.4-r0 \
+        php85-ctype=8.5.5-r1 \
+        php85-exif=8.5.5-r1 \
+        php85-fileinfo=8.5.5-r1 \
+        php85-fpm=8.5.5-r1 \
+        php85-gd=8.5.5-r1 \
+        php85-iconv=8.5.5-r1 \
+        php85-intl=8.5.5-r1 \
+        php85-ldap=8.5.5-r1 \
+        php85-mbstring=8.5.5-r1 \
+        php85-pdo_sqlite=8.5.5-r1 \
+        php85-pdo=8.5.5-r1 \
+        php85-simplexml=8.5.5-r1 \
+        php85-tokenizer=8.5.5-r1 \
+        php85=8.5.5-r1 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git \
         nodejs \
         npm \
-        php85-openssl=8.5.4-r0 \
-        php85-phar=8.5.4-r0 \
+        php85-openssl=8.5.5-r1 \
+        php85-phar=8.5.5-r1 \
     \
     && ln -sf /usr/bin/php85 /usr/bin/php \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
