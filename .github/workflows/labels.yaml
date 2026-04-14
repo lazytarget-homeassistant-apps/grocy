@@ -9,4 +9,4 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/labels.yaml@main
+    uses: lazytarget-homeassistant-apps/workflows/.github/workflows/labels.yaml@v2.2
